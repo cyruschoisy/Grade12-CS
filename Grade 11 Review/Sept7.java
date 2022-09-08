@@ -17,6 +17,5 @@ public class Sept7 {
 
         System.out.println(word.substring (1) + word.charAt (0));
         System.out.println(counter);
-
     }
 }
