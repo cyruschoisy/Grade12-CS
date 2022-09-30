@@ -5,7 +5,7 @@
 
 import java.io.*;
 import java.util.*;
-public class PartA {
+public class Assignment_1A {
     public static void main(String[] args) {
         boolean isValidAmount = false;
         double total = 0;
