@@ -1,6 +1,5 @@
 // Cyrus Choi
 
-
 import java.util.Scanner;
 
 public class recursionExercises {
@@ -27,12 +26,16 @@ public class recursionExercises {
     // Question 3
     public static int multiply (int y, int z) {
         // Base Case
-        if (y / z == y) {
+        if (y == 0) {
             return y;
         }
 
+        if (z == 0) {
+            return z;
+        }
+
         // Recursive Step
-        return z + multiply(y-1, z);
+        return Math.abs (z) + multiply(Math.abs (y-1), Math.abs(z));
     }
 
     // Question 4
@@ -131,7 +134,18 @@ public class recursionExercises {
 //        Q2
         System.out.print ("Q2: ");
         n = Integer.parseInt (in.nextLine());
+
+        while (n <= 0) {
+            System.out.print ("INVALID INPUT. TYPE AGAIN:");
+            n = Integer.parseInt(in.nextLine());
+
+            if (n > 0) {
+                break;
+            }
+        }
+
         System.out.println (fib (n));
+
 //        Q3
         System.out.println ("Q3: ");
         System.out.print ("x: ");
@@ -142,18 +156,73 @@ public class recursionExercises {
 
 //        Q4
         System.out.print ("Q4: ");
-        String s = in.nextLine();
+        String s = "";
+        boolean isValid = false;
+
+        do {
+            try {
+                s = in.nextLine();
+                isValid = true;
+
+            } catch (NumberFormatException e) {
+                System.out.print("INVALID INPUT. TYPE AGAIN:");
+                isValid = false;
+            }
+        } while (!isValid);
+
         System.out.println (findVowels(s));
+
+        isValid = false;
 
 //        Q5
         System.out.print ("Q5: ");
-        n = Integer.parseInt (in.nextLine());
+        System.out.print ("Number: ");
+        do {
+            try {
+                n = Integer.parseInt (in.nextLine());
+                isValid = true;
+
+            } catch (NumberFormatException e) {
+                System.out.print("INVALID INPUT. TYPE AGAIN:");
+                isValid = false;
+            }
+        } while (!isValid);
+
         System.out.println (commas (n));
+
+        isValid = false;
 
 //        Q6
         System.out.print ("Q6: ");
-        s = in.nextLine();
-        char c = in.nextLine().charAt (0);
+        System.out.print ("String: ");
+        do {
+            try {
+                s = in.nextLine();
+                isValid = true;
+
+            } catch (NumberFormatException e) {
+                System.out.print("INVALID INPUT. TYPE AGAIN:");
+                isValid = false;
+            }
+        } while (!isValid);
+
+        isValid = false;
+
+        System.out.print ("Character: ");
+        char c = 0;
+
+        do {
+            try {
+                c = in.nextLine().charAt (0);
+                isValid = true;
+            }
+
+            catch (NumberFormatException e) {
+                System.out.print("INVALID INPUT. TYPE AGAIN:");
+                isValid = false;
+            }
+        } while (!isValid);
+
         System.out.println (insert(s, c));
 
 //        Q7
