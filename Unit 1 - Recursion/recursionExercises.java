@@ -11,8 +11,7 @@ public class recursionExercises {
             return n;
         }
 
-        // Recursive Step
-        return (1.0 / n) + sumReciprocal(n-1);
+        return 1.0 / n + sumReciprocal(n-1);
     }
 
     // Question 2
@@ -117,6 +116,16 @@ public class recursionExercises {
 //        Q1
         System.out.print ("Q1: ");
         int n = Integer.parseInt(in.nextLine());
+
+        while (n <= 0) {
+            System.out.print ("INVALID INPUT. TYPE AGAIN:");
+            n = Integer.parseInt(in.nextLine());
+
+            if (n > 0) {
+                break;
+            }
+        }
+
         System.out.println (sumReciprocal(n));
 
 //        Q2
@@ -124,20 +133,22 @@ public class recursionExercises {
         n = Integer.parseInt (in.nextLine());
         System.out.println (fib (n));
 //        Q3
-        System.out.print ("Q3: ");
+        System.out.println ("Q3: ");
+        System.out.print ("x: ");
         int x = Integer.parseInt(in.nextLine());
+        System.out.print ("y: ");
         int y = Integer.parseInt(in.nextLine());
         System.out.println (multiply(x,y));
 
 //        Q4
         System.out.print ("Q4: ");
         String s = in.nextLine();
-        findVowels(s);
+        System.out.println (findVowels(s));
 
 //        Q5
         System.out.print ("Q5: ");
         n = Integer.parseInt (in.nextLine());
-        System.out.print (commas (n));
+        System.out.println (commas (n));
 
 //        Q6
         System.out.print ("Q6: ");
