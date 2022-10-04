@@ -25,6 +25,8 @@ public class recursionExercises {
 
     // Question 3
     public static int multiply (int y, int z) {
+        int temp = 0;
+
         // Base Case
         if (y == 0) {
             return y;
@@ -34,8 +36,19 @@ public class recursionExercises {
             return z;
         }
 
-        // Recursive Step
-        return Math.abs (z) + multiply(Math.abs (y-1), Math.abs(z));
+        if (y > 0 && z > 0) {
+            return Math.abs(z) + multiply(Math.abs(y - 1), Math.abs(z));
+        }
+
+        else if (y < 0 && z < 0) {
+            temp = Math.abs (z) + multiply (Math.abs (y + 1), Math.abs(z));
+            return temp * -1;
+        }
+
+        else {
+            temp = Math.abs (z) + multiply (Math.abs (y + 1), Math.abs(z));
+            return temp * -1;
+        }
     }
 
     // Question 4
